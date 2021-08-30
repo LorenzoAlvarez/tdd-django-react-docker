@@ -9,9 +9,9 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYHONUNBUFFERED 1
 
 # install system dependencies
-# RUN apt-get update \
-#     && apt-get -y install netcat gcc postgresql libpq-dev \
-#     && apt-get clean
+RUN apt-get update \
+    && apt-get -y install netcat gcc postgresql libpq-dev \
+    && apt-get clean
 
 # add and install poetry
 RUN pip install poetry
@@ -22,3 +22,6 @@ COPY . .
 
 # run server
 RUN poetry install
+
+# run entrypoint
+ENTRYPOINT [ "/usr/src/app/entrypoint.sh" ]
