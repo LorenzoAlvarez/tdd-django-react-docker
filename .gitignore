@@ -1,0 +1,7 @@
+.venv/
+db.sqlite3
+poetry.lock
+.vscode/
+drf_project/__pycache__
+movies/__pycache__
+movies/migrations/__pycache__
