@@ -15,7 +15,7 @@ def test_ping(client):
     url = reverse("ping")
     response = client.get(url)
     content = json.loads(response.content)
-    
+
     # Then
     assert response.status_code == 200
     assert content["ping"] == "pong!"
